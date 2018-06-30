@@ -320,3 +320,35 @@ body {
   .trending__top {
     display: flex;
     align-items: center; }
+  .trending__bottom {
+    margin-top: 4rem; }
+
+.gifts {
+  list-style: none; }
+  .gifts__item {
+    width: 20rem;
+    overflow: hidden; }
+  .gifts__figure {
+    width: 100%; }
+  .gifts__img {
+    width: 100%;
+    object-fit: fill;
+    filter: hue-rotate(168deg); }
+  .gifts__description {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  .gifts__link:link, .gifts__link:visited {
+    text-decoration: none;
+    color: #fff;
+    letter-spacing: 2px;
+    padding: 0.6rem;
+    font-weight: 300;
+    font-size: 1.4rem;
+    word-break: break-world;
+    text-align: center;
+    background: linear-gradient(145deg, transparent 50%, #8468f5 22%, #eb74e7 94%);
+    background-size: 260%;
+    transition: all 0.6s ease-in-out; }
+  .gifts__link:hover, .gifts__link:active {
+    background-position: 100%; }
