@@ -17,3 +17,26 @@ html {
 body {
 	box-sizing: border-box;
 }
+
+.row {
+	width: 104rem;
+	margin: 0 auto;
+}
+
+.container {
+	overflow-x: hidden;
+	@include flexColumn;
+	min-height: 100vh;
+	background-color: $black;
+	@include scroll;
+	background-image: url('../img/bg/bg-strip.png');
+	background-size: cover;
+}
+
+.header {
+	background-color: rgba(102, 51, 153, 0.425);
+}
+
+.main {
+	flex: 1;
+}
