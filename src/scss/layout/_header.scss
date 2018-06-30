@@ -1,6 +1,32 @@
 .header {
-	@include flexVertical;
 	padding-top: 4rem;
+
+	&__bottom {
+		height: 25.5rem;
+		@include bgColorToLeft;
+		position: relative;
+		z-index: 1000;
+		@include flexVertical;
+	}
+
+	&__bg_stripe {
+		position: absolute;
+		top: 0;
+		left: 12rem;
+		width: 100%;
+		height: 100%;
+		background-image: url('../img/bg/bg-strip-form.png');
+		z-index: -1;
+	}
+
+	&__top_content {
+		@include flexVertical;
+		margin-bottom: 2rem;
+	}
+
+	&__bottom_content {
+		margin-left: 10rem;
+	}
 
 	&__logo_box {
 		@include flexVertical;
