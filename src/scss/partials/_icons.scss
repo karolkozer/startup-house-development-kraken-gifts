@@ -1,3 +1,15 @@
 /**************************************
 ***** Icons
 ***************************************/
+
+.icon {
+	height: 3rem;
+	width: 3rem;
+
+	&--logo {
+		fill: $white;
+		height: 2.5rem;
+		width: 2.5rem;
+		transform: rotate(180deg);
+	}
+}
