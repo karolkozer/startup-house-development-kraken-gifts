@@ -14,7 +14,7 @@ body {
   font-size: 1.6rem; }
 
 .header__logo_name {
-  font-size: 2.5rem;
+  font-size: 2.3rem;
   font-weight: 300;
   letter-spacing: 1px; }
 
@@ -29,8 +29,8 @@ body {
   width: 3rem; }
   .icon--logo {
     fill: #fff;
-    height: 2.5rem;
-    width: 2.5rem;
+    height: 2.2rem;
+    width: 2.2rem;
     transform: rotate(180deg); }
 
 /**************************************
@@ -76,9 +76,11 @@ body {
   flex: 1; }
 
 .header {
-  display: flex;
-  align-items: center;
   padding-top: 4rem; }
+  .header__top_content {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem; }
   .header__logo_box {
     display: flex;
     align-items: center;
@@ -89,4 +91,34 @@ body {
     align-items: center;
     background: linear-gradient(to right bottom, #8468f5 22%, #de74ec 94%);
     padding: 0.8rem;
-    border-radius: 1rem; }
+    border-radius: 1rem;
+    margin-right: 1rem; }
+
+.nav__list {
+  display: flex;
+  list-style: none;
+  width: 100%; }
+
+.nav__item:not(:last-child) {
+  margin-right: 4rem; }
+
+.nav__link:link, .nav__link:visited {
+  text-decoration: none;
+  color: #fff;
+  letter-spacing: 2px;
+  padding-bottom: 0.6rem;
+  font-weight: 300;
+  font-size: 1.6rem; }
+
+.nav__link:link::after, .nav__link:visited::after {
+  content: '';
+  display: block;
+  background-color: #fff;
+  height: 0.2rem;
+  width: 100%;
+  margin-top: 0.6rem;
+  transform: scale(0);
+  transition: all 0.4s; }
+
+.nav__link:hover::after, .nav__link:active::after {
+  transform: scale(1); }
