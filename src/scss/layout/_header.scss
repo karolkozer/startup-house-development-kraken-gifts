@@ -1,6 +1,10 @@
 .header {
-	@include flexVertical;
 	padding-top: 4rem;
+
+	&__top_content {
+		@include flexVertical;
+		margin-bottom: 2rem;
+	}
 
 	&__logo_box {
 		@include flexVertical;
