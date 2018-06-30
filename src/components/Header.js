@@ -5,6 +5,7 @@ import icon from '../img/icons/sprite-icons.svg';
 
 // Import components
 import Nav from './Nav';
+import FormSearch from './Form_Search';
 
 const Header = () => {
 	return (
@@ -30,9 +31,10 @@ const Header = () => {
 					<div className="header__bottom_content">
 						<div className="header__hero_text">
 							<h1 className="heading-first">
-								Find the best Gifs <br />
+								Find the best GIFs <br />
 								On the internet.
 							</h1>
+							<FormSearch />
 						</div>
 					</div>
 				</div>
