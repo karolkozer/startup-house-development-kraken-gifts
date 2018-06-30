@@ -24,6 +24,19 @@ const Header = () => {
 					</div>
 				</div>
 			</div>
+			<div className="header__bottom">
+				<div className="header__bg_stripe">&nbsp;</div>
+				<div className="row header__row">
+					<div className="header__bottom_content">
+						<div className="header__hero_text">
+							<h1 className="heading-first">
+								Find the best Gifs <br />
+								On the internet.
+							</h1>
+						</div>
+					</div>
+				</div>
+			</div>
 		</header>
 	);
 };
