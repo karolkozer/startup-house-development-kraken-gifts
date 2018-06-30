@@ -37,11 +37,24 @@
 // Colors
 
 @mixin bgColor {
-	background: linear-gradient(to right bottom, $purple 22%, $pink-dark 94%);
+	background: linear-gradient(
+		to right bottom,
+		$purpble_blue 22%,
+		$pink-dark 94%
+	);
 }
 
 @mixin bgColorToRight {
-	background: linear-gradient(to right, $purple 22%, $pink-dark 94%);
+	background: linear-gradient(to right, $purpble_blue 22%, $pink-dark 94%);
+}
+
+// Logo
+
+@mixin logo {
+	@include flexCenter;
+	@include bgColor;
+	padding: 0.8rem;
+	border-radius: 1rem;
 }
 
 // Scroll
