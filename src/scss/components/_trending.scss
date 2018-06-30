@@ -1,0 +1,12 @@
+.trending {
+	flex: 1;
+	// background-color: rgba(102, 51, 153, 0.377);
+
+	&__row {
+		height: 100%;
+	}
+
+	&__top {
+		@include flexVertical;
+	}
+}
