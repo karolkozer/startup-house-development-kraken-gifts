@@ -6,7 +6,7 @@ import icon from '../img/icons/sprite-icons.svg';
 export default class FormSearch extends React.Component {
 	render() {
 		return (
-			<form className="form">
+			<form className="form form-search">
 				<input
 					className="form__input"
 					type="text"
