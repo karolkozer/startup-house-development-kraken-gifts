@@ -10,6 +10,7 @@ body {
   font-weight: 300;
   line-height: 1.7;
   text-rendering: optimizeLegibility;
+  color: #fff;
   font-size: 1.6rem; }
 
 /**************************************
@@ -33,3 +34,29 @@ html {
 
 body {
   box-sizing: border-box; }
+
+.row {
+  width: 104rem;
+  margin: 0 auto; }
+
+.container {
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #0b0e14;
+  background-image: url("../img/bg/bg-strip.png");
+  background-size: cover; }
+  .container::-webkit-scrollbar {
+    width: 1rem; }
+  .container::-webkit-scrollbar-track {
+    background-color: transparent; }
+  .container::-webkit-scrollbar-thumb {
+    background-color: #0b0e14;
+    border-radius: 50px; }
+
+.header {
+  background-color: rgba(102, 51, 153, 0.425); }
+
+.main {
+  flex: 1; }
