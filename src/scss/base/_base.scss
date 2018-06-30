@@ -24,9 +24,9 @@ body {
 }
 
 .container {
+	height: 100vh;
 	overflow-x: hidden;
 	@include flexColumn;
-	min-height: 100vh;
 	background-color: $black;
 	@include scroll;
 	background-image: url('../img/bg/bg-strip.png');
@@ -34,7 +34,7 @@ body {
 }
 
 .header {
-	background-color: rgba(102, 51, 153, 0.425);
+	// background-color: rgba(102, 51, 153, 0.425);
 }
 
 .main {
