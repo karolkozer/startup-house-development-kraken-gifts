@@ -1,3 +1,31 @@
 /**************************************
 ***** Icons
 ***************************************/
+
+.icon {
+	height: 3rem;
+	width: 3rem;
+
+	&--logo {
+		fill: $white;
+		height: 2.2rem;
+		width: 2.2rem;
+		transform: rotate(180deg);
+	}
+
+	&--submit,
+	&--sort {
+		height: 1.4rem;
+		width: 1.4rem;
+		margin-left: 1.5rem;
+		fill: $white;
+	}
+
+	&--sort {
+		height: 1.5rem;
+		width: 1.5rem;
+		margin-left: 0;
+		position: relative;
+		top: -1px;
+	}
+}

@@ -1,3 +1,27 @@
 /**************************************
 ***** BUTTONS
 ***************************************/
+
+.btn {
+	display: inline-block;
+	border: 1px solid transparent;
+	cursor: pointer;
+	background-color: transparent;
+
+	&:focus {
+		outline: none;
+	}
+
+	&--submit {
+		margin-left: 2rem;
+		@include bgColorToRight;
+		@include flexCenter;
+		color: $white;
+		padding: 0.8rem 2rem;
+		border-radius: 2rem;
+		font-size: 1.3rem;
+		font-weight: 300;
+		letter-spacing: 1.5px;
+		box-shadow: 0 1.5rem 4rem #63178f77;
+	}
+}
