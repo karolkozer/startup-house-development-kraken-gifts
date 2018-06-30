@@ -9,4 +9,8 @@
 	&__top {
 		@include flexVertical;
 	}
+
+	&__bottom {
+		margin-top: 4rem;
+	}
 }
