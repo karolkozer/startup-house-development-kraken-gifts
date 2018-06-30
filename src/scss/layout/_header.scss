@@ -1,12 +1,15 @@
 .header {
 	padding-top: 4rem;
 
+	&__row {
+		height: 100%;
+	}
+
 	&__bottom {
 		height: 25.5rem;
 		@include bgColorToLeft;
 		position: relative;
 		z-index: 1000;
-		@include flexVertical;
 	}
 
 	&__bg_stripe {
@@ -25,7 +28,9 @@
 	}
 
 	&__bottom_content {
+		height: 100%;
 		margin-left: 8rem;
+		@include flexVertical;
 	}
 
 	&__logo_box {
