@@ -6,6 +6,7 @@ import { observer, inject } from 'mobx-react';
 import FormSort from './Form_Sort';
 import Gifs from './Gifs';
 import Load from './Load';
+import LoadMore from './Load_More';
 
 class Trending extends React.Component {
 	static contextTypes = {
@@ -19,7 +20,15 @@ class Trending extends React.Component {
 	}
 
 	// Check if tere are gifs in the store, return loader
-	checkGifs = (gifs) => gifs.length === 0 && <Load />;
+	checkGifs = (gifs) =>
+		gifs.length === 0 ? (
+			<Load />
+		) : (
+			<React.Fragment>
+				<Gifs />
+				<LoadMore />
+			</React.Fragment>
+		);
 
 	render() {
 		const gifs = this.props.gifs.gifsData;
@@ -30,10 +39,7 @@ class Trending extends React.Component {
 						<h2 className="heading-second">Trending</h2>
 						<FormSort />
 					</div>
-					<div className="trending__bottom">
-						{this.checkGifs(gifs)}
-						<Gifs />
-					</div>
+					<div className="trending__bottom">{this.checkGifs(gifs)}</div>
 				</div>
 			</section>
 		);

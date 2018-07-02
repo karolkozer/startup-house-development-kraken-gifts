@@ -2,7 +2,7 @@ const API_KEY = 'api_key=2VuK9fQrDMgFx57onbKoF3ddB46VYs8Z';
 const BASE_URL = 'http://api.giphy.com/v1/gifs';
 const TRENDING_URL = `${BASE_URL}/trending`;
 
-const limit = 30;
+export const limit = 30;
 const LIMIT_URL = `limit=${limit}`;
 
 const status = (response) => {
@@ -24,6 +24,11 @@ const fetchData = (url) => {
 };
 
 export const fetchTrending = () => {
-	const url = `${TRENDING_URL}?${API_KEY}&${LIMIT_URL}`;
+	const url = `${TRENDING_URL}?${LIMIT_URL}&${API_KEY}`;
+	return fetchData(url);
+};
+
+export const fetchNextPage = (pagination) => {
+	const url = `${TRENDING_URL}?&${LIMIT_URL}&offset=${pagination}&${API_KEY}`;
 	return fetchData(url);
 };
