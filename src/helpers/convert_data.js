@@ -1,5 +1,5 @@
 export const sortData = (gifs, status) => {
-	return gifs.sort((lastOne, nextOne) => {
+	return gifs.slice().sort((lastOne, nextOne) => {
 		let aDate = lastOne.import_datetime;
 		let bDate = nextOne.import_datetime;
 		aDate = new Date(aDate);
