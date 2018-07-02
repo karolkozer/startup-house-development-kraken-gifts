@@ -324,10 +324,15 @@ body {
     margin-top: 4rem; }
 
 .gifts {
-  list-style: none; }
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap; }
   .gifts__item {
     width: 20rem;
-    overflow: hidden; }
+    overflow: hidden;
+    margin-bottom: 2rem; }
   .gifts__figure {
     width: 100%; }
   .gifts__img {
@@ -342,6 +347,7 @@ body {
     text-decoration: none;
     color: #fff;
     letter-spacing: 2px;
+    width: 100%;
     padding: 0.6rem;
     font-weight: 300;
     font-size: 1.4rem;
