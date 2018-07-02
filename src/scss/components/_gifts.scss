@@ -4,6 +4,7 @@ $gift_height: 18rem;
 .gifts {
 	list-style: none;
 	@include flexVertical;
+	align-items: flex-start;
 	justify-content: space-between;
 	flex-wrap: wrap;
 	animation: fadeInTop 4s;
@@ -16,13 +17,14 @@ $gift_height: 18rem;
 
 	&__figure {
 		width: 100%;
-		// height: $gift_height;
+		height: $gift_height;
+		@include bgColorToRight;
+		overflow: hidden;
 	}
 
 	&__img {
 		width: 100%;
-		// height: 100%;
-		// border-radius: 0.6rem;
+		height: 96%;
 		object-fit: fill;
 		filter: hue-rotate(168deg);
 	}
