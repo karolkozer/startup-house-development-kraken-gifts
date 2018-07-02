@@ -13,7 +13,7 @@ class Gifs extends React.Component {
 			<li key={gift.id} className="gifts__item">
 				<figure className="gifts__figure">
 					<img
-						src={gift.images.fixed_width.webp}
+						src={gift.images.fixed_width.url}
 						alt="Gift"
 						className="gifts__img"
 					/>
