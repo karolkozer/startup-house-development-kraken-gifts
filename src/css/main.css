@@ -75,6 +75,7 @@ body {
     box-shadow: 0 1.5rem 4rem #63178f77; }
   .btn--more {
     margin-left: 0;
+    margin-top: 3rem;
     font-size: 1.5rem;
     padding: 1rem 2.5rem;
     transform: translateY(0);
@@ -362,7 +363,7 @@ body {
   flex-wrap: wrap;
   animation: fadeInTop 4s; }
   .gifts__item {
-    width: 20rem;
+    width: 22rem;
     overflow: hidden;
     margin-bottom: 2rem; }
   .gifts__figure {
@@ -372,7 +373,7 @@ body {
     overflow: hidden; }
   .gifts__img {
     width: 100%;
-    height: 96%;
+    height: 98%;
     object-fit: fill;
     filter: hue-rotate(168deg); }
   .gifts__description {
