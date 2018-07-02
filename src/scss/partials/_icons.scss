@@ -13,6 +13,11 @@
 		transform: rotate(180deg);
 	}
 
+	&--logo_load {
+		height: 6rem;
+		width: 6rem;
+	}
+
 	&--submit,
 	&--sort {
 		height: 1.4rem;
