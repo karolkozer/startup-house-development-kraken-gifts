@@ -1,6 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'mobx-react';
+
+// Import store
+import stores from './stores';
 
 // Import css
 import './css/main.css';
@@ -9,11 +13,11 @@ import './css/main.css';
 import App from './components/App';
 
 const Root = () => (
-	<BrowserRouter>
-		<React.Fragment>
+	<Provider gifs={stores.gifs}>
+		<BrowserRouter>
 			<App />
-		</React.Fragment>
-	</BrowserRouter>
+		</BrowserRouter>
+	</Provider>
 );
 
 ReactDOM.render(<Root />, document.getElementById('root'));
