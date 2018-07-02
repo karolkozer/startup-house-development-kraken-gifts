@@ -10,10 +10,12 @@
 @keyframes fadeInTop {
   0% {
     opacity: 0;
-    visibility: hidden; }
+    visibility: hidden;
+    transform: translateY(8px); }
   100% {
     opacity: 1;
-    visibility: visible; } }
+    visibility: visible;
+    transform: translateY(0px); } }
 
 /**************************************
 ***** Colors
@@ -361,7 +363,7 @@ body {
   align-items: flex-start;
   justify-content: space-between;
   flex-wrap: wrap;
-  animation: fadeInTop 4s; }
+  animation: fadeInTop 2s; }
   .gifts__item {
     width: 22rem;
     overflow: hidden;
