@@ -16,8 +16,11 @@ class FormSort extends React.Component {
 	};
 
 	change = (e) => {
+		// Get the value
 		const value = e.target.value;
+		// Change the sort state
 		this.props.gifs.changeSortOption();
+		// Update the value
 		this.setState({ selectValue: value });
 	};
 
