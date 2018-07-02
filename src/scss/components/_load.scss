@@ -1,0 +1,10 @@
+.load {
+	padding: 5rem 0;
+
+	&__box {
+		@include logo;
+		@include bgColor;
+		padding: 1.4rem;
+		animation: spinner 2s infinite;
+	}
+}
