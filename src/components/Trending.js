@@ -5,10 +5,12 @@ import { observer, inject } from 'mobx-react';
 // Import components
 import FormSort from './Form_Sort';
 import Gifs from './Gifs';
+import Load from './Load';
 
 class Trending extends React.Component {
 	static contextTypes = {
-		fetchGifs: PropTypes.func
+		fetchGifs: PropTypes.func,
+		gifsData: PropTypes.array
 	};
 
 	componentDidMount() {
@@ -16,7 +18,11 @@ class Trending extends React.Component {
 		this.props.gifs.fetchGifs();
 	}
 
+	// Check if tere are gifs in the store, return loader
+	checkGifs = (gifs) => gifs.length === 0 && <Load />;
+
 	render() {
+		const gifs = this.props.gifs.gifsData;
 		return (
 			<section className="section trending">
 				<div className="row trending__row">
@@ -25,6 +31,7 @@ class Trending extends React.Component {
 						{/* <FormSort /> */}
 					</div>
 					<div className="trending__bottom">
+						{this.checkGifs(gifs)}
 						<Gifs />
 					</div>
 				</div>
