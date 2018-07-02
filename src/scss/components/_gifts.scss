@@ -6,6 +6,7 @@ $gift_height: 18rem;
 	@include flexVertical;
 	justify-content: space-between;
 	flex-wrap: wrap;
+	animation: fadeInTop 3s;
 
 	&__item {
 		width: $gift_width;
