@@ -10,12 +10,10 @@
 @keyframes fadeInTop {
   0% {
     opacity: 0;
-    visibility: hidden;
-    transform: translateY(4px); }
+    visibility: hidden; }
   100% {
     opacity: 1;
-    visibility: visible;
-    transform: translateY(0px); } }
+    visibility: visible; } }
 
 /**************************************
 ***** Colors
@@ -276,6 +274,7 @@ body {
   transform: translateY(0);
   transition: all 0.4s ease-in-out;
   color: #9c9b9f;
+  padding: 0.7rem 1rem 0.7rem 2rem;
   width: 20rem;
   font-size: 1.3rem;
   margin-left: 3.5rem; }
@@ -353,7 +352,7 @@ body {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  animation: fadeInTop 3s; }
+  animation: fadeInTop 4s; }
   .gifts__item {
     width: 20rem;
     overflow: hidden;
