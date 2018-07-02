@@ -11,6 +11,7 @@
 	}
 
 	&__bottom {
-		margin-top: 4rem;
+		@include flexCenter;
+		padding: 4rem 0;
 	}
 }
