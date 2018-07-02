@@ -1,4 +1,4 @@
-$gift_width: 20rem;
+$gift_width: 22rem;
 $gift_height: 18rem;
 
 .gifts {
@@ -24,7 +24,7 @@ $gift_height: 18rem;
 
 	&__img {
 		width: 100%;
-		height: 96%;
+		height: 98%;
 		object-fit: fill;
 		filter: hue-rotate(168deg);
 	}
