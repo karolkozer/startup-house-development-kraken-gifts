@@ -343,8 +343,6 @@ body {
 
 .trending {
   flex: 1; }
-  .trending__row {
-    height: 100%; }
   .trending__top {
     display: flex;
     align-items: center; }
