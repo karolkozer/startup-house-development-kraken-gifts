@@ -11,7 +11,7 @@
 	}
 
 	&__bottom {
-		@include flexCenter;
+		@include flexColumnCenter;
 		padding: 4rem 0;
 	}
 }
