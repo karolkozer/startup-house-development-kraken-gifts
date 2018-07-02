@@ -28,7 +28,7 @@ class Trending extends React.Component {
 				<div className="row trending__row">
 					<div className="trending__top">
 						<h2 className="heading-second">Trending</h2>
-						{/* <FormSort /> */}
+						<FormSort />
 					</div>
 					<div className="trending__bottom">
 						{this.checkGifs(gifs)}
