@@ -19,7 +19,7 @@ class Trending extends React.Component {
 		this.props.gifs.fetchGifs();
 	}
 
-	// Check if tere are gifs in the store, return loader
+	// Check if there are gifs in the store, return loader
 	checkGifs = (gifs) =>
 		gifs.length === 0 ? (
 			<Load />
