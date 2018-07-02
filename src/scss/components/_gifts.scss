@@ -3,10 +3,14 @@ $gift_height: 18rem;
 
 .gifts {
 	list-style: none;
+	@include flexVertical;
+	justify-content: space-between;
+	flex-wrap: wrap;
 
 	&__item {
 		width: $gift_width;
 		overflow: hidden;
+		margin-bottom: 2rem;
 	}
 
 	&__figure {
@@ -32,6 +36,7 @@ $gift_height: 18rem;
 			text-decoration: none;
 			color: $white;
 			letter-spacing: 2px;
+			width: 100%;
 			padding: 0.6rem;
 			font-weight: 300;
 			font-size: 1.4rem;
