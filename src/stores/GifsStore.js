@@ -16,11 +16,19 @@ class GifsStore {
 			this.gifsData = sortData(gifs, this.sort);
 			this.pagination = { ...data.pagination };
 		});
+
+	changeSortOption = () => {
+		// Change the sort state
+		this.sort = !this.sort;
+		// Sort the data, udpate the gifs data state
+		this.gifsData = sortData(this.gifsData, this.sort);
+	};
 }
 
 decorate(GifsStore, {
 	gifsData: observable,
-	fetchGifs: action
+	fetchGifs: action,
+	changeSortOption: action
 });
 
 export default new GifsStore();
