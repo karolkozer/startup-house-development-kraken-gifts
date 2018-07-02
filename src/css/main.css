@@ -343,8 +343,6 @@ body {
 
 .trending {
   flex: 1; }
-  .trending__row {
-    height: 100%; }
   .trending__top {
     display: flex;
     align-items: center; }
@@ -359,6 +357,7 @@ body {
   list-style: none;
   display: flex;
   align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   flex-wrap: wrap;
   animation: fadeInTop 4s; }
@@ -367,9 +366,13 @@ body {
     overflow: hidden;
     margin-bottom: 2rem; }
   .gifts__figure {
-    width: 100%; }
+    width: 100%;
+    height: 18rem;
+    background: linear-gradient(to right, #8468f5 22%, #eb74e7 94%);
+    overflow: hidden; }
   .gifts__img {
     width: 100%;
+    height: 96%;
     object-fit: fill;
     filter: hue-rotate(168deg); }
   .gifts__description {
