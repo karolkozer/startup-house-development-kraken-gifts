@@ -13,10 +13,24 @@
 		transform: rotate(180deg);
 	}
 
-	&--submit {
+	&--logo_load {
+		height: 6rem;
+		width: 6rem;
+	}
+
+	&--submit,
+	&--sort {
 		height: 1.4rem;
 		width: 1.4rem;
 		margin-left: 1.5rem;
 		fill: $white;
+	}
+
+	&--sort {
+		height: 1.5rem;
+		width: 1.5rem;
+		margin-left: 0;
+		position: relative;
+		top: -1px;
 	}
 }

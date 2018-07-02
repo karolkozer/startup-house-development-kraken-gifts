@@ -19,7 +19,7 @@ body {
 }
 
 .row {
-	width: 104rem;
+	max-width: 104rem;
 	margin: 0 auto;
 }
 
@@ -33,10 +33,11 @@ body {
 	background-size: cover;
 }
 
-.header {
-	// background-color: rgba(102, 51, 153, 0.425);
-}
-
 .main {
 	flex: 1;
+	display: flex;
+}
+
+.section {
+	padding: 4rem 0;
 }
