@@ -34,7 +34,7 @@ class GifsStore {
 	handleDetailsLoaded = () => (this.isDetailsLoaded = !this.isDetailsLoaded);
 
 	// Library
-	checkLibrary = (id) => Object.keys(this.library).find((gif) => gif.id === id);
+	checkLibrary = (id) => Object.keys(this.library).find((gif) => gif === id);
 	addToLibrary = (gif) => (this.library[gif.id] = gif);
 
 	// Fetch Details
@@ -42,8 +42,8 @@ class GifsStore {
 		// Change isDataLoaded state
 		this.isDetailsLoaded = false;
 		fetchDetails(id).then((data) => {
-			console.log(data.data);
 			this.gifDetails = { ...data.data };
+			console.log(this.gifDetails);
 			this.handleDetailsLoaded();
 		});
 	};
