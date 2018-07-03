@@ -1,29 +1,56 @@
 import { observable, action, decorate } from 'mobx';
-import { fetchTrending, fetchNextPage, limit } from '../helpers/fetch_data';
+import {
+	fetchTrending,
+	fetchSearch,
+	fetchNextPage,
+	limit
+} from '../helpers/fetch_data';
 import { sortData } from '../helpers/convert_data';
 
 class GifsStore {
+	// Data
 	gifsData = [];
 
 	pagination = {};
 
 	sort = true;
 
+	isDataLoaded = false;
+
 	isNextPageLoaded = true;
 
+	// Actions
 	handlePageLoad = () => (this.isNextPageLoaded = !this.isNextPageLoaded);
 
-	fetchGifs = () =>
+	handleDataLoaded = () => (this.isDataLoaded = !this.isDataLoaded);
+
+	fetchGifs = () => {
+		// Change isDataLoaded state
+		this.isDataLoaded = false;
+
 		fetchTrending().then((data) => {
 			const gifs = [...data.data];
 			// Set the data
 			this.gifsData = sortData(gifs, this.sort);
 			this.pagination = { ...data.pagination };
+			// Change isDataLoaded state
+			this.handleDataLoaded();
 		});
+	};
+
+	fetchSearchGifs = (query) => {
+		this.isDataLoaded = false;
+		fetchSearch(query).then((data) => {
+			// Set the data
+			this.gifsData = [...data.data];
+			this.pagination = { ...data.pagination };
+			// Change isDataLoaded state
+			this.handleDataLoaded();
+		});
+	};
 
 	fetchMore = () => {
 		// Change load next page
-		console.log('clicked');
 		this.handlePageLoad();
 		// Change teh pagination
 		this.pagination.offset = this.pagination.offset + limit + 1;
@@ -36,7 +63,6 @@ class GifsStore {
 			this.pagination = { ...data.pagination };
 			// Change load next page
 			this.handlePageLoad();
-			console.log('After', this.pagination.offset);
 		});
 	};
 
@@ -50,8 +76,10 @@ class GifsStore {
 
 decorate(GifsStore, {
 	gifsData: observable,
+	isDataLoaded: observable,
 	isNextPageLoaded: observable,
 	fetchGifs: action,
+	fetchSearchGif: action,
 	fetchMore: action,
 	changeSortOption: action
 });

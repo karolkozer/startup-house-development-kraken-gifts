@@ -10,8 +10,7 @@ import LoadMore from './Load_More';
 
 class Trending extends React.Component {
 	static contextTypes = {
-		fetchGifs: PropTypes.func,
-		gifsData: PropTypes.array
+		isDataLoaded: PropTypes.bool
 	};
 
 	componentDidMount() {
@@ -20,18 +19,18 @@ class Trending extends React.Component {
 	}
 
 	// Check if there are gifs in the store, return loader
-	checkGifs = (gifs) =>
-		gifs.length === 0 ? (
-			<Load />
-		) : (
+	checkGifs = (isDataLoaded) =>
+		isDataLoaded ? (
 			<React.Fragment>
 				<Gifs />
 				<LoadMore />
 			</React.Fragment>
+		) : (
+			<Load />
 		);
 
 	render() {
-		const gifs = this.props.gifs.gifsData;
+		const isDataLoaded = this.props.gifs.isDataLoaded;
 		return (
 			<section className="section trending">
 				<div className="row trending__row">
@@ -39,7 +38,7 @@ class Trending extends React.Component {
 						<h2 className="heading-second">Trending</h2>
 						<FormSort />
 					</div>
-					<div className="trending__bottom">{this.checkGifs(gifs)}</div>
+					<div className="trending__bottom">{this.checkGifs(isDataLoaded)}</div>
 				</div>
 			</section>
 		);

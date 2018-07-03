@@ -1,13 +1,44 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 // Import icons
 import icon from '../img/icons/sprite-icons.svg';
 
 export default class FormSearch extends React.Component {
+	static contextTypes = {
+		router: PropTypes.object.isRequired
+	};
+
+	state = { inputValue: '' };
+
+	handleForm = (e) => {
+		// Prevent default actions
+		e.preventDefault();
+		// Get the value,
+		const query = `${this.state.inputValue}`;
+		// Remove spaces and specila characters
+		const newQuery = query
+			.trim()
+			.replace(/[@$%^&?/|/.*()_+{}|~:"',-=+!><`]/g, '');
+		// If there is a query, push to the search section
+		if (newQuery) {
+			e.currentTarget.reset();
+			this.context.router.history.push(`/search/${query}`);
+		}
+	};
+
+	// Update inputValue
+	updateInputValue = (e) =>
+		this.setState({
+			inputValue: e.target.value
+		});
+
 	render() {
 		return (
-			<form className="form-search">
+			<form onSubmit={this.handleForm} className="form-search">
 				<input
+					value={this.state.value}
+					onChange={this.updateInputValue}
 					className="form-search__input"
 					type="text"
 					name="text"
