@@ -9,10 +9,13 @@ import NotFoundMessage from './Not_Found_Message';
 
 class Search extends React.Component {
 	static contextTypes = {
-		isDataLoaded: PropTypes.bool,
-		fetchSearchGif: PropTypes.func,
-		gifsData: PropTypes.array,
-		query: PropTypes.string
+		gifs: PropTypes.shape({
+			isDataLoaded: PropTypes.bool,
+			fetchSearchGif: PropTypes.func,
+			gifsData: PropTypes.array,
+			query: PropTypes.string
+		}),
+		match: PropTypes.object
 	};
 
 	componentDidMount() {
@@ -32,7 +35,8 @@ class Search extends React.Component {
 	}
 
 	// Check if gifs are loaded
-	checkIfLoaded = (isDataLoaded) => (isDataLoaded ? <Gifs /> : <Load />);
+	checkIfLoaded = (isDataLoaded, gifs) =>
+		isDataLoaded ? <Gifs gifs={gifs} /> : <Load />;
 
 	// Check if there are gifs in the store, return message
 	checkGifs = (gifs, isDataLoaded) => {
@@ -49,7 +53,7 @@ class Search extends React.Component {
 						<h2 className="heading-second">{`Search results for "${query}"`}</h2>
 					</div>
 					<div className="search__bottom">
-						{this.checkIfLoaded(isDataLoaded)}
+						{this.checkIfLoaded(isDataLoaded, gifs)}
 						{this.checkGifs(gifs, isDataLoaded)}
 					</div>
 				</div>

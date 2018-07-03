@@ -12,7 +12,8 @@ body {
 
 .heading-first,
 .heading-second,
-.heading-third {
+.heading-third,
+.heading-fourth {
 	font-weight: 400;
 	letter-spacing: 1px;
 }
@@ -35,10 +36,46 @@ body {
 	margin: 3rem 0;
 }
 
+.heading-fourth {
+	text-transform: capitalize;
+	font-size: 2.4rem;
+	margin-bottom: 2rem;
+}
+
 .header {
 	&__logo_name {
 		font-size: 2.3rem;
 		font-weight: 300;
+		letter-spacing: 1px;
+	}
+}
+
+.gifts__title {
+	text-decoration: none;
+	color: $white;
+	letter-spacing: 2px;
+	width: 100%;
+	padding: 0.6rem;
+	font-weight: 300;
+	font-size: 1.4rem;
+	word-break: break-world;
+	text-align: center;
+	background: linear-gradient(
+		154deg,
+		transparent 50%,
+		$purpble_blue 22%,
+		$pink-dark 125%
+	);
+	background-size: 330%;
+	transition: all 0.6s ease-in-out;
+}
+
+.gif-details {
+	&__type,
+	&__rating {
+		margin-bottom: 0.8rem;
+		font-weight: 400;
+		font-size: 1.7rem;
 		letter-spacing: 1px;
 	}
 }
