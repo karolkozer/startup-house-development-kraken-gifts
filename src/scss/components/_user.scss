@@ -3,6 +3,7 @@ $height: 5rem;
 
 .user {
 	margin-top: 2rem;
+	display: flex;
 
 	&__figure {
 		@include flexCenter;
