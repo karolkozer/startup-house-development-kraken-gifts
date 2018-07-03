@@ -12,27 +12,23 @@ class Gifs extends React.Component {
 		url ? url : 'https://media2.giphy.com/media/3DlbzSll6cskZZXSo5/200w.gif';
 
 	checkGifTitle = (title) =>
-		title ? (
-			<Link to="/gift/:id" className="gifts__link">
-				{title}
-			</Link>
-		) : (
-			''
-		);
+		title ? <p className="gifts__title">{title}</p> : '';
 
 	handleGift = (gifs) => {
 		return gifs.map((gif, index) => (
 			<li key={`${gif.id}-${index}`} className="gifts__item">
-				<figure className="gifts__figure">
-					<img
-						src={this.checkGifUrl(gif.images.fixed_width.url)}
-						alt="Gift"
-						className="gifts__img"
-					/>
-				</figure>
-				<div className="gifts__description">
-					{this.checkGifTitle(gif.title)}
-				</div>
+				<Link to={`/gif/${gif.id}`} className="gifts__link">
+					<figure className="gifts__figure">
+						<img
+							src={this.checkGifUrl(gif.images.fixed_width.url)}
+							alt="Gift"
+							className="gifts__img"
+						/>
+					</figure>
+					<div className="gifts__description">
+						{this.checkGifTitle(gif.title)}
+					</div>
+				</Link>
 			</li>
 		));
 	};

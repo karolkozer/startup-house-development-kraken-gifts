@@ -9,10 +9,13 @@ import NotFoundMessage from './Not_Found_Message';
 
 class Search extends React.Component {
 	static contextTypes = {
-		isDataLoaded: PropTypes.bool,
-		fetchSearchGif: PropTypes.func,
-		gifsData: PropTypes.array,
-		query: PropTypes.string
+		gifs: PropTypes.shape({
+			isDataLoaded: PropTypes.bool,
+			fetchSearchGif: PropTypes.func,
+			gifsData: PropTypes.array,
+			query: PropTypes.string
+		}),
+		match: PropTypes.object
 	};
 
 	componentDidMount() {
