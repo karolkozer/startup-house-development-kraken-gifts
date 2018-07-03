@@ -7,3 +7,6 @@ export const sortData = (gifs, status) => {
 		return status ? (aDate < bDate ? 1 : -1) : aDate > bDate ? 1 : -1;
 	});
 };
+
+export const replaceQuery = (query) =>
+	query.replace(/[&\/\\#,+()$@^*.~%.'":*?<>{}]/g, '');
