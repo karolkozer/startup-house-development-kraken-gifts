@@ -3,7 +3,7 @@ $gift_height: 16rem;
 
 .gifts {
 	list-style: none;
-	@include flexVertical;
+	display: flex;
 	align-items: flex-start;
 	justify-content: space-between;
 	flex-wrap: wrap;
