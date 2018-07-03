@@ -21,8 +21,8 @@ class Gifs extends React.Component {
 		);
 
 	handleGift = (gifs) => {
-		return gifs.map((gif) => (
-			<li key={gif.id} className="gifts__item">
+		return gifs.map((gif, index) => (
+			<li key={`${gif.id}-${index}`} className="gifts__item">
 				<figure className="gifts__figure">
 					<img
 						src={this.checkGifUrl(gif.images.fixed_width.url)}
