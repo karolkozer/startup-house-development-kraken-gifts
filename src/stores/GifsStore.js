@@ -36,14 +36,15 @@ class GifsStore {
 	// Library
 	checkLibrary = (id) => Object.keys(this.library).find((gif) => gif === id);
 	addToLibrary = (gif) => (this.library[gif.id] = gif);
+	removeFromLibrary = (gif) => delete this.library[gif.id];
 
 	// Fetch Details
 	fetchGifDetails = (id) => {
-		// Change isDataLoaded state
+		// Change isDetailsLoaded state
 		this.isDetailsLoaded = false;
 		fetchDetails(id).then((data) => {
 			this.gifDetails = { ...data.data };
-			console.log(this.gifDetails);
+			// Change isDetailsLoaded state
 			this.handleDetailsLoaded();
 		});
 	};
@@ -110,7 +111,8 @@ decorate(GifsStore, {
 	fetchMore: action,
 	changeSortOption: action,
 	checkLibrary: action,
-	addToLibrary: action
+	addToLibrary: action,
+	removeFromLibrary: action
 });
 
 export default new GifsStore();
