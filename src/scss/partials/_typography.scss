@@ -11,7 +11,8 @@ body {
 }
 
 .heading-first,
-.heading-second {
+.heading-second,
+.heading-third {
 	font-weight: 400;
 	letter-spacing: 1px;
 }
@@ -27,6 +28,11 @@ body {
 
 .heading-second {
 	font-size: 2.6rem;
+}
+
+.heading-third {
+	font-size: 3rem;
+	margin: 3rem 0;
 }
 
 .header {
