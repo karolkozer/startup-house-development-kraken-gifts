@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { observer, inject } from 'mobx-react';
-import checkRating from '../helpers/raiting';
 
 // Import components
 import Load from './Load';
@@ -9,8 +8,6 @@ import GifDetails from './Gif_Details';
 
 class Details extends React.Component {
 	static contextTypes = {
-		id: PropTypes.string,
-		gifDetails: PropTypes.object,
 		isDataLoaded: PropTypes.bool
 	};
 
@@ -33,7 +30,7 @@ class Details extends React.Component {
 	checkIfLoaded = (isDataLoaded) => (isDataLoaded ? <GifDetails /> : <Load />);
 
 	render() {
-		const { gifDetails: details, isDetailsLoaded } = this.props.gifs;
+		const isDetailsLoaded = this.props.gifs.isDetailsLoaded;
 		return (
 			<section className="section details">
 				<div className="row details__row">
