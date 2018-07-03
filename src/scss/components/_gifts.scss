@@ -1,5 +1,5 @@
-$gift_width: 22rem;
-$gift_height: 18rem;
+$gift_width: 18rem;
+$gift_height: 16rem;
 
 .gifts {
 	list-style: none;
@@ -46,12 +46,12 @@ $gift_height: 18rem;
 			word-break: break-world;
 			text-align: center;
 			background: linear-gradient(
-				145deg,
+				154deg,
 				transparent 50%,
 				$purpble_blue 22%,
-				$pink-dark 94%
+				$pink-dark 125%
 			);
-			background-size: 260%;
+			background-size: 330%;
 			transition: all 0.6s ease-in-out;
 		}
 
