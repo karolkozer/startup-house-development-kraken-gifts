@@ -19,10 +19,10 @@ class Trending extends React.Component {
 	}
 
 	// Check if there are gifs in the store, return loader
-	checkGifs = (isDataLoaded) =>
+	checkGifs = (isDataLoaded, gifs) =>
 		isDataLoaded ? (
 			<React.Fragment>
-				<Gifs />
+				<Gifs gifs={gifs} />
 				<LoadMore />
 			</React.Fragment>
 		) : (
@@ -30,7 +30,7 @@ class Trending extends React.Component {
 		);
 
 	render() {
-		const isDataLoaded = this.props.gifs.isDataLoaded;
+		const { gifsData: gifs, isDataLoaded } = this.props.gifs;
 		return (
 			<section className="section trending">
 				<div className="row trending__row">
@@ -38,7 +38,9 @@ class Trending extends React.Component {
 						<h2 className="heading-second">Trending</h2>
 						<FormSort />
 					</div>
-					<div className="trending__bottom">{this.checkGifs(isDataLoaded)}</div>
+					<div className="trending__bottom">
+						{this.checkGifs(isDataLoaded, gifs)}
+					</div>
 				</div>
 			</section>
 		);
