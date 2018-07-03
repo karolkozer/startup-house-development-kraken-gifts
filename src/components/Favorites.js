@@ -10,13 +10,10 @@ class Favorites extends React.Component {
 		console.log(this.props.gifs.library);
 	};
 
-	checkTheLibrary = (details) => {
+	checkTheLibrary = (check, details) => {
 		console.log('Library', this.props.gifs.library);
-		console.log('Before', details.id);
-		console.log(Object.keys(this.props.gifs.library));
-		const checkLibrary = this.props.gifs.checkLibrary(details.id);
-		console.log(checkLibrary);
-		return !checkLibrary ? (
+		console.log('Before', details.favorites);
+		return !check ? (
 			<button
 				onClick={() => this.addToLibrary(details)}
 				className="btn--controller btn--add"
@@ -28,9 +25,16 @@ class Favorites extends React.Component {
 		);
 	};
 
+	checkLibrary = (library, id) =>
+		Object.keys(library).find((gif_id) => gif_id === id);
+
 	render() {
-		const { gifDetails: details } = this.props.gifs;
-		return <div className="favorites">{this.checkTheLibrary(details)}</div>;
+		const { gifDetails: details, library } = this.props.gifs;
+		const check = this.checkLibrary(library, details.id);
+
+		return (
+			<div className="favorites">{this.checkTheLibrary(check, details)}</div>
+		);
 	}
 }
 
