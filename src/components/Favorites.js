@@ -12,7 +12,7 @@ class Favorites extends React.Component {
 
 	checkTheLibrary = (check, details) => {
 		console.log('Library', this.props.gifs.library);
-		console.log('Before', details.favorites);
+		console.log('Before', details);
 		return !check ? (
 			<button
 				onClick={() => this.addToLibrary(details)}
