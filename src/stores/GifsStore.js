@@ -1,5 +1,6 @@
 import { observable, action, decorate } from 'mobx';
 import {
+	fetchDetails,
 	fetchTrending,
 	fetchSearch,
 	fetchNextPage,
@@ -13,9 +14,15 @@ class GifsStore {
 
 	pagination = {};
 
+	library = {};
+
+	gifDetails = {};
+
 	sort = true;
 
 	isDataLoaded = false;
+
+	isDetailsLoaded = false;
 
 	isNextPageLoaded = true;
 
@@ -23,6 +30,23 @@ class GifsStore {
 	handlePageLoad = () => (this.isNextPageLoaded = !this.isNextPageLoaded);
 
 	handleDataLoaded = () => (this.isDataLoaded = !this.isDataLoaded);
+
+	handleDetailsLoaded = () => (this.isDetailsLoaded = !this.isDetailsLoaded);
+
+	// Library
+	checkLibrary = (id) => Object.keys(this.library).find((gif) => gif.id === id);
+	addToLibrary = (gif) => (this.library[gif.id] = gif);
+
+	// Fetch Details
+	fetchGifDetails = (id) => {
+		// Change isDataLoaded state
+		this.isDetailsLoaded = false;
+		fetchDetails(id).then((data) => {
+			console.log(data.data);
+			this.gifDetails = { ...data.data };
+			this.handleDetailsLoaded();
+		});
+	};
 
 	fetchGifs = () => {
 		// Change isDataLoaded state
@@ -76,12 +100,17 @@ class GifsStore {
 
 decorate(GifsStore, {
 	gifsData: observable,
+	library: observable,
 	isDataLoaded: observable,
+	isDetailsLoaded: observable,
 	isNextPageLoaded: observable,
 	fetchGifs: action,
+	fetchGifDetails: action,
 	fetchSearchGif: action,
 	fetchMore: action,
-	changeSortOption: action
+	changeSortOption: action,
+	checkLibrary: action,
+	addToLibrary: action
 });
 
 export default new GifsStore();

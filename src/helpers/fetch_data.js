@@ -24,6 +24,11 @@ const fetchData = (url) => {
 		.catch((error) => alert(Error(`Request filed HTTP status`)));
 };
 
+export const fetchDetails = (id) => {
+	const url = `${BASE_URL}/${id}?${API_KEY}`;
+	return fetchData(url);
+};
+
 export const fetchTrending = () => {
 	const url = `${TRENDING_URL}?${LIMIT_URL}&${API_KEY}`;
 	return fetchData(url);

@@ -5,6 +5,7 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 import Header from './Header';
 import Trending from './Trending';
 import Search from './Search';
+import Details from './Details';
 
 export default class App extends React.Component {
 	render() {
@@ -16,6 +17,7 @@ export default class App extends React.Component {
 						<Redirect exact from="/" to="/trending" />
 						<Route path="/trending" component={Trending} />
 						<Route path="/search/:query" component={Search} />
+						<Route path="/gif/:id" component={Details} />
 					</Switch>
 				</main>
 			</div>

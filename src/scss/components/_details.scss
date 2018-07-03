@@ -1,0 +1,29 @@
+$width: 38rem;
+
+.details {
+	flex: 1;
+
+	&__content {
+		@include flexCenter;
+		align-items: flex-start;
+		padding: 1rem 0 3rem 0;
+	}
+
+	&__gif {
+		flex: 1;
+	}
+
+	&__figure {
+		width: $width;
+		@include bgColor;
+		overflow: hidden;
+	}
+
+	&__img {
+		width: 100%;
+	}
+
+	&__description {
+		flex: 1;
+	}
+}

@@ -37,27 +37,10 @@ $gift_height: 16rem;
 		&:link,
 		&:visited {
 			text-decoration: none;
-			color: $white;
-			letter-spacing: 2px;
-			width: 100%;
-			padding: 0.6rem;
-			font-weight: 300;
-			font-size: 1.4rem;
-			word-break: break-world;
-			text-align: center;
-			background: linear-gradient(
-				154deg,
-				transparent 50%,
-				$purpble_blue 22%,
-				$pink-dark 125%
-			);
-			background-size: 330%;
-			transition: all 0.6s ease-in-out;
 		}
+	}
 
-		&:hover,
-		&:active {
-			background-position: 100%;
-		}
+	&__link:hover &__title {
+		background-position: 100%;
 	}
 }
