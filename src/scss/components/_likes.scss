@@ -1,0 +1,12 @@
+.likes {
+	flex: 1;
+
+	&__top {
+		@include flexVertical;
+	}
+
+	&__bottom {
+		@include flexColumnCenter;
+		padding: 4rem 0;
+	}
+}
