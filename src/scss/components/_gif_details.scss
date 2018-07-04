@@ -16,6 +16,7 @@ $width: 38rem;
 	&__description {
 		flex: 1;
 		@include flexColumn;
+		align-items: flex-start;
 	}
 
 	&__link {

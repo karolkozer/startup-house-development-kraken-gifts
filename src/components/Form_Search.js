@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { replaceQuery } from '../helpers/convert_data';
 
 // Import icons
 import icon from '../img/icons/sprite-icons.svg';
@@ -17,13 +18,11 @@ export default class FormSearch extends React.Component {
 		// Get the value,
 		const query = `${this.state.inputValue}`;
 		// Remove spaces and specila characters
-		const newQuery = query
-			.trim()
-			.replace(/[@$%^&?/|/.*()_+{}|~:"',-=+!><`]/g, '');
+		const newQuery = replaceQuery(query).trim();
 		// If there is a query, push to the search section
 		if (newQuery) {
 			e.currentTarget.reset();
-			this.context.router.history.push(`/search/${query}`);
+			this.context.router.history.push(`/search/${newQuery}`);
 		}
 	};
 

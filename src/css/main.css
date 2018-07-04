@@ -408,7 +408,6 @@ body {
 .gifts {
   list-style: none;
   display: flex;
-  align-items: center;
   align-items: flex-start;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -477,7 +476,8 @@ body {
     padding: 0rem 0 4rem 0; }
 
 .user {
-  margin-top: 2rem; }
+  margin-top: 2rem;
+  display: flex; }
   .user__figure {
     display: flex;
     justify-content: center;
@@ -512,7 +512,8 @@ body {
   .gif-details__description {
     flex: 1;
     display: flex;
-    flex-direction: column; }
+    flex-direction: column;
+    align-items: flex-start; }
   .gif-details__link:link, .gif-details__link:visited {
     margin-top: 1rem;
     display: flex;
@@ -523,3 +524,15 @@ body {
     font-weight: 400; }
   .gif-details__link:hover, .gif-details__link:active {
     color: #8468f5; }
+
+.likes {
+  flex: 1; }
+  .likes__top {
+    display: flex;
+    align-items: center; }
+  .likes__bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 0; }

@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { observer, inject } from 'mobx-react';
 
-class Gifs extends React.Component {
+export default class Gifs extends React.Component {
 	static contextTypes = {
 		gifsData: PropTypes.array
 	};
@@ -34,9 +33,7 @@ class Gifs extends React.Component {
 	};
 
 	render() {
-		const gifs = this.props.gifs.gifsData;
+		const gifs = this.props.gifs;
 		return <ul className="gifts">{this.handleGift(gifs)}</ul>;
 	}
 }
-
-export default inject('gifs')(observer(Gifs));
