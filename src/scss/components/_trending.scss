@@ -3,6 +3,10 @@
 
 	&__top {
 		@include flexVertical;
+
+		@include media(phone-sm) {
+			flex-direction: column;
+		}
 	}
 
 	&__bottom {

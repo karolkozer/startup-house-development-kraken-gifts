@@ -4,6 +4,10 @@ $width: 38rem;
 	flex: 1;
 	display: flex;
 
+	@include media(tab-port) {
+		flex-direction: column;
+	}
+
 	&__gif {
 		flex: 1;
 		display: flex;
@@ -15,6 +19,10 @@ $width: 38rem;
 		width: $width;
 		@include bgColor;
 		overflow: hidden;
+
+		@include media(phone-sm) {
+			width: $width - 4;
+		}
 	}
 
 	&__img {
@@ -26,6 +34,19 @@ $width: 38rem;
 		flex: 1;
 		@include flexColumn;
 		align-items: flex-start;
+
+		@include media(tab-port) {
+			padding-left: 3rem;
+		}
+
+		@include media(tab-port) {
+			align-items: center;
+			margin-top: 4rem;
+
+			& > *:not(:last-child) {
+				margin-bottom: 2rem;
+			}
+		}
 	}
 
 	&__link {

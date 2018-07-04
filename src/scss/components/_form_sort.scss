@@ -1,9 +1,15 @@
 .form-sort {
 	@include form;
 	padding: 0.7rem 1rem 0.7rem 2rem;
-	width: 20rem;
+	width: 21rem;
 	font-size: 1.3rem;
 	margin-left: 3.5rem;
+
+	@include media(phone-sm) {
+		margin-left: 0;
+		margin-top: 2rem;
+		width: 30rem;
+	}
 
 	&:hover &__icon_box {
 		transform: rotate(180deg);

@@ -20,22 +20,49 @@
 		height: 100%;
 		background-image: url('../img/bg/bg-strip-form.png');
 		z-index: -1;
+
+		@include media(64em) {
+			background-image: url('../img/bg/bg-strip-form-medium.png');
+		}
+
+		@include media(phone) {
+			background-image: url('../img/bg/bg-strip-form-small.png');
+			left: 0rem;
+		}
+		@include media(22.5em) {
+			background-image: none;
+		}
 	}
 
 	&__top_content {
 		@include flexVertical;
 		margin-bottom: 2rem;
+
+		@include media(phone-sm) {
+			flex-direction: column;
+			align-items: center;
+		}
 	}
 
 	&__bottom_content {
 		height: 100%;
 		margin-left: 8rem;
 		@include flexVertical;
+
+		@include media(phone) {
+			justify-content: center;
+			margin-left: 0;
+		}
 	}
 
 	&__logo_box {
 		@include flexVertical;
 		margin-right: auto;
+
+		@include media(phone-sm) {
+			margin-right: 0;
+			margin-bottom: 3rem;
+		}
 	}
 
 	&__logo {

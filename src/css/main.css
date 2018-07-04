@@ -62,7 +62,8 @@ body {
 .heading-fourth {
   text-transform: capitalize;
   font-size: 2.4rem;
-  margin-bottom: 2rem; }
+  margin-bottom: 2rem;
+  text-align: center; }
 
 .header__logo_name {
   font-size: 2.3rem;
@@ -172,6 +173,18 @@ body {
 
 html {
   font-size: 62.5%; }
+  @media only screen and (min-width: 112.5em) {
+    html {
+      font-size: 63.5%; } }
+  @media only screen and (max-width: big-desktop) {
+    html {
+      font-size: 63.5%; } }
+  @media only screen and (max-width: 75em) {
+    html {
+      font-size: 59%; } }
+  @media only screen and (max-width: 56.25em) {
+    html {
+      font-size: 57%; } }
 
 body {
   box-sizing: border-box; }
@@ -179,6 +192,15 @@ body {
 .row {
   max-width: 104rem;
   margin: 0 auto; }
+  @media only screen and (max-width: 75em) {
+    .row {
+      padding: 0 1%; } }
+  @media only screen and (max-width: 64em) {
+    .row {
+      padding: 0 3%; } }
+  @media only screen and (max-width: 37.5em) {
+    .row {
+      padding: 0 4%; } }
 
 .container {
   height: 100vh;
@@ -195,6 +217,15 @@ body {
   .container::-webkit-scrollbar-thumb {
     background: linear-gradient(to left top, #8468f5 8%, #eb74e7 94%);
     border-radius: 50px; }
+  @media only screen and (max-width: 64em) {
+    .container {
+      background-image: url("../img/bg/bg-strip-medium.png"); } }
+  @media only screen and (max-width: 37.5em) {
+    .container {
+      background-image: url("../img/bg/bg-strip-small.png"); } }
+  @media only screen and (max-width: 25em) {
+    .container {
+      background-image: url("../img/bg/bg-strip-mobile.png"); } }
 
 .main {
   flex: 1;
@@ -220,19 +251,41 @@ body {
     height: 100%;
     background-image: url("../img/bg/bg-strip-form.png");
     z-index: -1; }
+    @media only screen and (max-width: 64em) {
+      .header__bg_stripe {
+        background-image: url("../img/bg/bg-strip-form-medium.png"); } }
+    @media only screen and (max-width: 37.5em) {
+      .header__bg_stripe {
+        background-image: url("../img/bg/bg-strip-form-small.png");
+        left: 0rem; } }
+    @media only screen and (max-width: 22.5em) {
+      .header__bg_stripe {
+        background-image: none; } }
   .header__top_content {
     display: flex;
     align-items: center;
     margin-bottom: 2rem; }
+    @media only screen and (max-width: 25em) {
+      .header__top_content {
+        flex-direction: column;
+        align-items: center; } }
   .header__bottom_content {
     height: 100%;
     margin-left: 8rem;
     display: flex;
     align-items: center; }
+    @media only screen and (max-width: 37.5em) {
+      .header__bottom_content {
+        justify-content: center;
+        margin-left: 0; } }
   .header__logo_box {
     display: flex;
     align-items: center;
     margin-right: auto; }
+    @media only screen and (max-width: 25em) {
+      .header__logo_box {
+        margin-right: 0;
+        margin-bottom: 3rem; } }
   .header__logo {
     display: flex;
     justify-content: center;
@@ -319,9 +372,13 @@ body {
     color: #9c9b9f;
     font-size: 1.3rem;
     font-weight: 300;
-    cursor: pointer; }
+    cursor: pointer;
+    align-self: stretch; }
     .form-search select:focus {
       outline: none; }
+  @media only screen and (max-width: 25em) {
+    .form-search {
+      width: 34rem; } }
 
 .form-sort {
   background-color: #fff;
@@ -335,7 +392,7 @@ body {
   transition: all 0.4s ease-in-out;
   color: #9c9b9f;
   padding: 0.7rem 1rem 0.7rem 2rem;
-  width: 20rem;
+  width: 21rem;
   font-size: 1.3rem;
   margin-left: 3.5rem; }
   .form-sort:focus {
@@ -374,9 +431,15 @@ body {
     color: #9c9b9f;
     font-size: 1.3rem;
     font-weight: 300;
-    cursor: pointer; }
+    cursor: pointer;
+    align-self: stretch; }
     .form-sort select:focus {
       outline: none; }
+  @media only screen and (max-width: 25em) {
+    .form-sort {
+      margin-left: 0;
+      margin-top: 2rem;
+      width: 30rem; } }
   .form-sort:hover .form-sort__icon_box {
     transform: rotate(180deg); }
   .form-sort__icon_box {
@@ -398,6 +461,9 @@ body {
   .trending__top {
     display: flex;
     align-items: center; }
+    @media only screen and (max-width: 25em) {
+      .trending__top {
+        flex-direction: column; } }
   .trending__bottom {
     display: flex;
     flex-direction: column;
@@ -413,15 +479,32 @@ body {
   flex-wrap: wrap;
   width: 100%;
   animation: fadeInTop 2s; }
+  @media only screen and (max-width: 25em) {
+    .gifts {
+      justify-content: space-between; } }
+  @media only screen and (max-width: 22.18em) {
+    .gifts {
+      justify-content: space-evenly; } }
   .gifts__item {
     width: 18rem;
     overflow: hidden;
     margin: 0 1rem 2rem 1rem; }
+    @media only screen and (max-width: 25em) {
+      .gifts__item {
+        width: 17rem;
+        margin: 0 0.2rem 2rem 0.2rem; } }
+    @media only screen and (max-width: 22.18em) {
+      .gifts__item {
+        width: 14rem;
+        margin: 0 0.2rem 2rem 0.2rem; } }
   .gifts__figure {
     width: 100%;
     height: 16rem;
     background: linear-gradient(to right, #8468f5 22%, #eb74e7 94%);
     overflow: hidden; }
+    @media only screen and (max-width: 22.18em) {
+      .gifts__figure {
+        height: 14rem; } }
   .gifts__img {
     width: 100%;
     height: 98%;
@@ -475,6 +558,10 @@ body {
     align-items: center;
     align-items: flex-start;
     padding: 0rem 0 4rem 0; }
+    @media only screen and (max-width: 56.25em) {
+      .details__content {
+        align-items: center;
+        padding: 0rem 0 6rem 0; } }
 
 .user {
   margin-top: 2rem;
@@ -505,6 +592,9 @@ body {
 .gif-details {
   flex: 1;
   display: flex; }
+  @media only screen and (max-width: 56.25em) {
+    .gif-details {
+      flex-direction: column; } }
   .gif-details__gif {
     flex: 1;
     display: flex;
@@ -514,6 +604,9 @@ body {
     width: 38rem;
     background: linear-gradient(to right bottom, #8468f5 22%, #eb74e7 94%);
     overflow: hidden; }
+    @media only screen and (max-width: 25em) {
+      .gif-details__figure {
+        width: 34rem; } }
   .gif-details__img {
     width: 100%;
     height: 98%; }
@@ -522,6 +615,15 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-start; }
+    @media only screen and (max-width: 56.25em) {
+      .gif-details__description {
+        padding-left: 3rem; } }
+    @media only screen and (max-width: 56.25em) {
+      .gif-details__description {
+        align-items: center;
+        margin-top: 4rem; }
+        .gif-details__description > *:not(:last-child) {
+          margin-bottom: 2rem; } }
   .gif-details__link:link, .gif-details__link:visited {
     margin-top: 1rem;
     display: flex;

@@ -12,6 +12,18 @@
 
 html {
 	font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
+
+	@include media(big-desktop) {
+		font-size: 63.5%;
+	}
+
+	@include media(tab-land) {
+		font-size: 59%;
+	}
+
+	@include media(tab-port) {
+		font-size: 57%;
+	}
 }
 
 body {
@@ -21,6 +33,16 @@ body {
 .row {
 	max-width: 104rem;
 	margin: 0 auto;
+
+	@include media(tab-land) {
+		padding: 0 1%;
+	}
+	@include media(64em) {
+		padding: 0 3%;
+	}
+	@include media(phone) {
+		padding: 0 4%;
+	}
 }
 
 .container {
@@ -31,6 +53,17 @@ body {
 	@include scroll;
 	background-image: url('../img/bg/bg-strip.png');
 	background-size: cover;
+
+	@include media(64em) {
+		background-image: url('../img/bg/bg-strip-medium.png');
+	}
+
+	@include media(phone) {
+		background-image: url('../img/bg/bg-strip-small.png');
+	}
+	@include media(phone-sm) {
+		background-image: url('../img/bg/bg-strip-mobile.png');
+	}
 }
 
 .main {

@@ -13,19 +13,46 @@ import User from './User';
 class GifDetails extends React.Component {
 	static contextTypes = {
 		gifDetails: PropTypes.object,
-		library: PropTypes.object
+		library: PropTypes.object,
+		size: PropTypes.number,
+		setSize: PropTypes.func
 	};
 
 	componentDidMount() {
 		// Check local storage
 		const storage = JSON.parse(localStorage.getItem('kraken-library'));
 		this.props.gifs.library = storage || {};
+		// Set the default device width
+		this.setDefaultSize();
+		// Update the device width
+		this.setUpdateSize();
 	}
+	setDefaultSize = () => this.props.media.setSize(window.innerWidth);
+
+	setUpdateSize = () =>
+		window.addEventListener('resize', (e) =>
+			this.props.media.setSize(e.currentTarget.innerWidth)
+		);
+
+	// Check the device size to change the img url
+	responsiveImage = (details, size) => {
+		return size < 400
+			? details.images.downsized.url
+			: details.images.downsized_medium.url;
+	};
+
+	// Check the device size to change the img heigh
+	checkHeight = (details, size) => {
+		return size < 400
+			? details.images.downsized.height
+			: details.images.downsized_medium.height;
+	};
 
 	render() {
 		const { gifDetails: details } = this.props.gifs;
+		const size = this.props.media.size;
 		// Get gif height
-		const imgHeight = details.images.downsized_medium.height;
+		const imgHeight = this.checkHeight(details, size);
 		// Convert height style
 		const style = convertStyleHeight(imgHeight);
 		return (
@@ -33,7 +60,7 @@ class GifDetails extends React.Component {
 				<div className="gif-details__gif">
 					<figure className="gif-details__figure" style={{ ...style }}>
 						<img
-							src={details.images.downsized_medium.url}
+							src={this.responsiveImage(details, size)}
 							alt="Gif"
 							className="gif-details__img"
 						/>
@@ -59,4 +86,4 @@ class GifDetails extends React.Component {
 	}
 }
 
-export default inject('gifs')(observer(GifDetails));
+export default inject('gifs', 'media')(observer(GifDetails));
