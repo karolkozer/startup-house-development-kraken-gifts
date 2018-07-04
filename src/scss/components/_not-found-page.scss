@@ -1,0 +1,7 @@
+.not-found-page {
+	flex: 1;
+
+	&__content {
+		@include flexCenter;
+	}
+}
