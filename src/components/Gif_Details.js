@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { observer, inject } from 'mobx-react';
 import checkRating from '../helpers/raiting';
+import { convertStyleHeight } from '../helpers/convert_data';
 // Import icons
 import icon from '../img/icons/sprite-icons.svg';
 
@@ -23,10 +24,14 @@ class GifDetails extends React.Component {
 
 	render() {
 		const { gifDetails: details } = this.props.gifs;
+		// Get gif height
+		const imgHeight = details.images.downsized_medium.height;
+		// Convert height style
+		const style = convertStyleHeight(imgHeight);
 		return (
-			<React.Fragment>
-				<div className="gif-details">
-					<figure className="gif-details__figure">
+			<div className="gif-details">
+				<div className="gif-details__gif">
+					<figure className="gif-details__figure" style={{ ...style }}>
 						<img
 							src={details.images.downsized_medium.url}
 							alt="Gif"
@@ -49,7 +54,7 @@ class GifDetails extends React.Component {
 					<User />
 					<Favorites />
 				</div>
-			</React.Fragment>
+			</div>
 		);
 	}
 }

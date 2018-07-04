@@ -5,14 +5,15 @@ $gift_height: 16rem;
 	list-style: none;
 	display: flex;
 	align-items: flex-start;
-	justify-content: space-between;
+	justify-content: space-evenly;
 	flex-wrap: wrap;
+	width: 100%;
 	animation: fadeInTop 2s;
 
 	&__item {
 		width: $gift_width;
 		overflow: hidden;
-		margin-bottom: 2rem;
+		margin: 0 1rem 2rem 1rem;
 	}
 
 	&__figure {
