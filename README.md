@@ -6,6 +6,8 @@ The project "Kraken Gifs" was made for the company "Startup Development House".
 The project is an application related to gifs. The application shows the most popular gifs from the "Giphy" database. In addition, it allows the user to search for gifs, see their detailed information. Moreover, the user can add or remove gif from the library.
 After refreshing the site, all gifs from the library will be available.
 
+Loading new gifs using the "More GIFs" button is automatically sorted by the date of adding the gif to the "Giphy" database.
+
 The project was made for modern and latest web browsers.
 
 ### Design, project structure and implementation of the project have been implemented and designed by Karol Kozer.
