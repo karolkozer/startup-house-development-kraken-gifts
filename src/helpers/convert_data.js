@@ -9,7 +9,7 @@ export const sortData = (gifs, status) => {
 };
 
 export const replaceQuery = (query) =>
-	query.replace(/[&\/\\#,+()$@^*.~%.'":*?<>{}]/g, '');
+	query.replace(/[&\/\\#,+=!()$@^*.~%.'":*|?<>{}]/g, '');
 
 export const convertStyleHeight = (img) => {
 	const heightGif = parseInt(img, 10);
