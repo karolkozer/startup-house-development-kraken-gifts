@@ -52,6 +52,8 @@ class GifsStore {
 	fetchGifs = () => {
 		// Change isDataLoaded state
 		this.isDataLoaded = false;
+		// Change the sort state
+		this.sort = true;
 
 		fetchTrending().then((data) => {
 			const gifs = [...data.data];
