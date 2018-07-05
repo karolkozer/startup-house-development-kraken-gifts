@@ -5,4 +5,8 @@
 	@include media(phone-sm) {
 		width: 34rem;
 	}
+
+	@include media(20em) {
+		width: 30rem;
+	}
 }

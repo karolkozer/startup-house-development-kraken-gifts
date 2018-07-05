@@ -29,6 +29,11 @@ body {
 
 .heading-second {
 	font-size: 2.6rem;
+
+	@include media(20em) {
+		text-align: center;
+		width: 24rem;
+	}
 }
 
 .heading-third {
@@ -43,6 +48,10 @@ body {
 
 	@include media(phone) {
 		text-align: center;
+	}
+
+	@include media(20em) {
+		width: 24rem;
 	}
 }
 
@@ -86,5 +95,11 @@ body {
 		font-weight: 400;
 		font-size: 1.7rem;
 		letter-spacing: 1px;
+	}
+
+	&__rating {
+		@include media(20em) {
+			text-align: center;
+		}
 	}
 }
