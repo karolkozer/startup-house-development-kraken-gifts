@@ -43,6 +43,10 @@ body {
 	@include media(phone) {
 		padding: 0 4%;
 	}
+
+	@include media(20em) {
+		padding: 0 2%;
+	}
 }
 
 .container {

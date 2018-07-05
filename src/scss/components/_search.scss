@@ -3,6 +3,10 @@
 
 	&__top {
 		@include flexVertical;
+
+		@include media(20em) {
+			justify-content: center;
+		}
 	}
 
 	&__bottom {
