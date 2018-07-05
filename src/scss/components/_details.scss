@@ -5,5 +5,10 @@
 		@include flexCenter;
 		align-items: flex-start;
 		padding: 0rem 0 4rem 0;
+
+		@include media(tab-port) {
+			align-items: center;
+			padding: 0rem 0 6rem 0;
+		}
 	}
 }

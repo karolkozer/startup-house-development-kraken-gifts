@@ -13,7 +13,7 @@ import './css/main.css';
 import App from './components/App';
 
 const Root = () => (
-	<Provider gifs={stores.gifs}>
+	<Provider gifs={stores.gifs} media={stores.media}>
 		<BrowserRouter>
 			<App />
 		</BrowserRouter>

@@ -1,4 +1,8 @@
 .form-search {
 	@include form;
 	width: 40rem;
+
+	@include media(phone-sm) {
+		width: 34rem;
+	}
 }

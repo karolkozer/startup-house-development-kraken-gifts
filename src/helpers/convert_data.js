@@ -12,7 +12,7 @@ export const replaceQuery = (query) =>
 	query.replace(/[&\/\\#,+()$@^*.~%.'":*?<>{}]/g, '');
 
 export const convertStyleHeight = (img) => {
-	const heightGif = parseInt(img);
+	const heightGif = parseInt(img, 10);
 	const height =
 		heightGif > 400
 			? heightGif > 500

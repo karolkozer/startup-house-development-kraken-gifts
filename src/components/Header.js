@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 // Import icons
 import icon from '../img/icons/sprite-icons.svg';
@@ -19,7 +20,9 @@ const Header = () => {
 									<use xlinkHref={`${icon}#icon-google`} />
 								</svg>
 							</div>
-							<p className="header__logo_name">Kraken</p>
+							<Link to="/trending" className="header__logo_name">
+								Kraken
+							</Link>
 						</div>
 						<Nav />
 					</div>
