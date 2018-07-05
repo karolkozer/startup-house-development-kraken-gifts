@@ -1,0 +1,30 @@
+.form-sort {
+	@include form;
+	padding: 0.7rem 1rem 0.7rem 2rem;
+	width: 21rem;
+	font-size: 1.3rem;
+	margin-left: 3.5rem;
+
+	@include media(phone-sm) {
+		margin-left: 0;
+		margin-top: 2rem;
+		width: 30rem;
+	}
+
+	&:hover &__icon_box {
+		transform: rotate(180deg);
+	}
+
+	&__icon_box {
+		margin-left: 1rem;
+		@include bgColorToRight;
+		@include flexCenter;
+		color: $white;
+		padding: 0.6rem 1.8rem;
+		border-radius: 2rem;
+		font-size: 1.3rem;
+		font-weight: 300;
+		box-shadow: 0 1.5rem 4rem #63178f77;
+		transition: all 0.3s ease-in-out;
+	}
+}

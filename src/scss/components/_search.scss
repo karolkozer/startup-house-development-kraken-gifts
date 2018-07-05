@@ -1,0 +1,16 @@
+.search {
+	flex: 1;
+
+	&__top {
+		@include flexVertical;
+
+		@include media(20em) {
+			justify-content: center;
+		}
+	}
+
+	&__bottom {
+		@include flexColumnCenter;
+		padding: 4rem 0;
+	}
+}

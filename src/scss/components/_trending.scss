@@ -1,0 +1,16 @@
+.trending {
+	flex: 1;
+
+	&__top {
+		@include flexVertical;
+
+		@include media(phone-sm) {
+			flex-direction: column;
+		}
+	}
+
+	&__bottom {
+		@include flexColumnCenter;
+		padding: 4rem 0;
+	}
+}
