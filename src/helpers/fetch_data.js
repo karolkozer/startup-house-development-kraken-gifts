@@ -1,5 +1,5 @@
 const API_KEY = 'api_key=2VuK9fQrDMgFx57onbKoF3ddB46VYs8Z';
-const BASE_URL = 'http://api.giphy.com/v1/gifs';
+const BASE_URL = 'https://api.giphy.com/v1/gifs';
 const TRENDING_URL = `${BASE_URL}/trending`;
 const SEARCH_URL = `${BASE_URL}/search`;
 
